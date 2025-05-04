@@ -1,0 +1,144 @@
+---
+title: "Übung Modul 6"
+subtitle: "Grundlagen der quantitativen Analyse und Visualisierung digitaler Information <br></br> 07. Mai 2025"
+format: 
+  revealjs:
+    theme: default
+footer: |
+      **Dr. Franziska Klemstein** | © 2025 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+output-dir: docs
+
+---
+# {.smaller}
+<h1 style="font-size:2.0em">Deskriptive Statistik</h1>
+<br>
+
+
+# {.smaller} 
+<h1 style="font-size:2.0em">Begriffe</h1>
+
+* **Variable:** Ein Merkmal, das man misst oder erhebt (z.Bsp.: Alter, Einkommen, Haarfarbe, Studienfach)
+* Die einzelnen Werte eines Merkmals nennt man **Merkmalsausprägungen** (z.Bsp.: 25, 900,00 €, rot, Soziologie)
+* Der **Merkmalsraum** ist die Menge aller möglichen Merkmalsausprägungen, die ein Merkmal annehmen kann.
+  **Beispiel**: 
+  Merkmal: Haarfarbe
+  Mögliche Ausprägungen: {blond, braun, schwarz, rot, grau} = Möglichkeitsraum
+* Eine **Datenmatrix** ist eine Tabelle, in der beispielsweie in jeder Zeile eine Person steht und jeder Spalte ein Merkmal, also z.B. das Alter
+
+## {.smaller}
+<h3 style="font-size:1.8em">Merkmalstypen (Arten von Variablen)</h3>
+
+**Qualitativ**<br>
+
+* **Nominal**: keine Reihenfolge (z.B. Berufe)
+* **Ordinal**: Reihenfolge ja, aber keine genauen Abstände (z.B. Bewertungen wie: gut, mittel, schlecht)
+
+**Quantitativ**<br>
+
+* **Kardinal**: Reihenfolge und Werte mit festen Abständen (z.B. Alter)
+    * **Intervallskaliert**: ohne "echten" Nullpunkt, gleiche Abstände (z.B. Temperatur in °C)
+    * **Verhältnisskaliert**: mit Nullpunkt (z.B. Gewicht, Alter), gleiche Abstände
+    * **diskrete** (zählbar: ganzzahlig, endlich viele Werte) oder **stetige** Merkmale (beliebig viele Zwischenwerte möglich)<br>
+
+---
+
+**Beispiel:**<br>
+
+::: {.fragment}
+* Anzahl Kinder<span class="fragment"> = kardinal, diskret</span>
+:::
+
+::: {.fragment}
+* Körpergröße<span class="fragment"> = kardinal, stetig</span>
+:::
+
+::: {.fragment}
+* Schulnoten (1–6)<span class="fragment"> = diskret, aber ordinal, nicht kardinal</span>
+:::
+
+## {.smaller}
+<h3 style="font-size:1.8em">Skalenniveaus</h3>
+<br>
+Das Skalenniveau gibt an, welche (mathematischen) Operationen mit einer entsperechend skalierten Variable zulässig sind.
+
+<img src="/img/Skalenniveau.png" width="700">
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+  Quelle: <a href="https://de.wikipedia.org/wiki/Skalenniveau">Wikipedia-Eintrag: Skalenniveau</a> [zuletzt abgerufen: 04.05.2025].
+</p>
+
+## {.smaller}
+<h3 style="font-size:1.8em">Häufigkeiten</h3>
+<br>
+
+* Die **absolute Häufigkeit** gibt an, wie oft ein bestimmter Wert, d.h. eine bestimmte Merkmalsausprägung vorkommt.
+
+* Die **relative Häufigkeit** gibt an, wie groß der Anteil eines Wertes im Vergleich zur Gesamtzahl ist.
+    * Absolute Häufigkeit : Gesamtzahl der Beobachtungen = Relative Häufigkeit.
+
+Die relative Häufigkeit wird oft auch in Prozent angegeben.
+
+* Die **Kumulative Häufigkeit** zeigt die **aufsummierten Häufigkeiten** bis zu einem bestimmten Wert.
+    * Wichtig für Aussagen wie: „Wie viel Prozent haben höchstens 3 Punkte erreicht?“
+
+
+# {.smaller}
+<h2 style="font-size:2.0em">Grundlagen der statistischen Auswertung</h2>
+<br>
+
+## {.smaller}
+<h3 style="font-size:1.8em">Summen berechnen</h3>
+<br>
+Gegeben sind zwei Zahlenreihen:
+
+$x_i = 6, 4, 1, 3$
+
+$y_i = 1, 3, 4, 2$
+
+**Summe von xi:**
+
+$$\sum_{i=1}^{4}x_i=6+4+1+3=14$$
+
+**Summe von xi * yi:**
+$$\sum_{i=1}^{4}x_i⋅y_i=(6⋅1)+(4⋅3)+(1⋅4)+(3⋅2)=6+12+4+6=28$$
+
+## {.smaller}
+<h3 style="font-size:1.8em">Produkte berechnen</h3>
+<br>
+Gegeben sind zwei Zahlenreihen:
+
+$x_i = 6, 4, 1, 3$
+
+$y_i = 1, 3, 4, 2$
+
+**Produkt aller xi:**
+$$\prod_{i=1}^{4}x_i= 6 \cdot 4 \cdot 1 \cdot 3=72$$
+
+
+**Produkt von xi * yi:**
+
+$$\prod_{i=1}^{4}x_i \cdot y_i = (6 \cdot 1) \cdot (4 \cdot 3) \cdot (1 \cdot 4) \cdot (3 \cdot 2) = 6 \cdot 12 \cdot 4 \cdot 6 = 1728$$
+
+# {.smaller}
+<h2 style="font-size:2.0em">Grafische Darstellungen</h2>
+<br>
+
+## {.smaller}
+<h2 style="font-size:1.8em">Säulendiagramm</h2>
+<br>
+
+
+## {.smaller}
+<h2 style="font-size:1.8em">Kreisdiagramm</h2>
+<br>
+
+## {.smaller}
+<h2 style="font-size:1.8em">Histogramm</h2>
+<br>
+
+# {.smaller}
+<h2 style="font-size:1.8em">Häufigkeiten berechnen mit Python und RStudio</h2>
+<br>
+
+# {.smaller}
+<h2 style="font-size:2.0em">Quantifying Kissinger</h2>
+<br>
