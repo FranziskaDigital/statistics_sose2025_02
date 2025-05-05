@@ -400,3 +400,88 @@ print(paste("Mittelwert:", mittelwert))
 <h2 style="font-size:2.0em">Quantifying Kissinger</h2>
 <br>
 
+## {.smaller}
+<h2 style="font-size:1.8em">Parallelen zwischen Häufigkeitsverteilung und Quantifying Kissinger</h2>
+<br>
+
+::: {.fragment}
+* Zählung von Begriffen und Themen in Kissingers Kommunikation<span class="fragment"> >> Häufigkeitsverteilung</span>
+:::
+
+::: {.fragment}
+* Erfassung zeitlicher Trends<span class="fragment"> >> kumulierte Häufigkeit über Zeit hinweg</span>
+:::
+
+::: {.fragment}
+* Visualisierung von Daten (Wer kommuniziert mit wem?; Welche Themen dominieren?)
+:::
+
+## {.smaller}
+<h2 style="font-size:1.8em">Beispiel im Stil von "Quantifying Kissinger"</h2>
+<br>
+
+**<a href="https://www.henryakissinger.com/speeches/keynote-speech-commemorating-president-ronald-reagans-112th-birthday-ronald-reagan-presidential-foundation-institute/">Text (Rede):</a>**
+"Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good."
+
+## {.smaller}
+<h2 style="font-size:1.8em">Beispiel: Text vorbereiten und Wörter zählen (Python)"</h2>
+<br>
+
+```{python}
+from collections import Counter
+import matplotlib.pyplot as plt
+
+# Beispieltext
+text = """
+Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good.
+"""
+
+# Wörter in Kleinbuchstaben und bereinigt
+words = text.lower().replace(".", "").replace(",", "").split()
+word_freq = Counter(words)
+print(word_freq)
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Beispiel: Relative Häufigkeit (Python)</h2>
+<br>
+
+```{python}
+total_words = sum(word_freq.values())
+rel_freq = {word: round(count / total_words * 100, 2) for word, count in word_freq.items()}
+print(rel_freq)
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Beispiel: Text vorbereiten und Wörter zählen (RStudio)"</h2>
+<br>
+
+**Text**
+
+```{r}
+text <- "Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good."
+# Text zu Kleinbuchstaben & entfernen von Satzzeichen
+text_clean <- tolower(gsub("[[:punct:]]", "", text))
+# In Wörter zerlegen
+words <- unlist(strsplit(text_clean, "\\s+"))
+# Häufigkeit zählen
+word_freq <- table(words)
+print(word_freq)
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Beispiel: Relative Häufigkeit (RStudio)</h2>
+<br>
+
+```{r}
+rel_freq <- prop.table(word_freq)
+round(rel_freq * 100, 2)  # in Prozent
+```
+
+# {.smaller}
+<h2 style="font-size:2.0em">Aufgabe</h2>
+<br>
+
+Erstellt mit Python und RStudio ein Säulen- und ein Kreisdiagramm zu den Top 10 Wörtern des Textauszugs.
+Legt die Datei in den Abgabeordner "Kissinger". Verwendet hierfür folgendes Dateinamensschema: 01_Name_Kissinger.[Dateiendung]
+**Abgabe-Deadline:** 12.05.2025

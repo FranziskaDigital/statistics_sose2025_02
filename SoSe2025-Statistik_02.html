@@ -784,7 +784,7 @@ Kreisdiagramme
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>plt.pie(rel_haeufigkeit.values, labels<span class="op">=</span>rel_haeufigkeit.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>([&lt;matplotlib.patches.Wedge object at 0x13ecc3520&gt;, &lt;matplotlib.patches.Wedge object at 0x13ecc3160&gt;, &lt;matplotlib.patches.Wedge object at 0x13ecd4430&gt;, &lt;matplotlib.patches.Wedge object at 0x13ece25e0&gt;], [Text(0.5499999722395388, 0.9526279601903919, '2'), Text(-1.0999999999999959, -9.616505800409723e-08, '3'), Text(0.19101348711923324, -1.0832884416158748, '4'), Text(1.0336617954935041, -0.37622239770798543, '5')], [Text(0.29999998485793017, 0.5196152510129409, '33.3%'), Text(-0.5999999999999978, -5.2453668002234845e-08, '33.3%'), Text(0.10418917479230903, -0.5908846045177498, '22.2%'), Text(0.5638155248146386, -0.2052122169316284, '11.1%')])</code></pre>
+<pre><code>([&lt;matplotlib.patches.Wedge object at 0x110743250&gt;, &lt;matplotlib.patches.Wedge object at 0x110743430&gt;, &lt;matplotlib.patches.Wedge object at 0x110762130&gt;, &lt;matplotlib.patches.Wedge object at 0x11077e400&gt;], [Text(0.5499999722395388, 0.9526279601903919, '2'), Text(-1.0999999999999959, -9.616505800409723e-08, '3'), Text(0.19101348711923324, -1.0832884416158748, '4'), Text(1.0336617954935041, -0.37622239770798543, '5')], [Text(0.29999998485793017, 0.5196152510129409, '33.3%'), Text(-0.5999999999999978, -5.2453668002234845e-08, '33.3%'), Text(0.10418917479230903, -0.5908846045177498, '22.2%'), Text(0.5638155248146386, -0.2052122169316284, '11.1%')])</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co">## autopct zeigt bei jedem Torstenstück den Prozentwert an; %1.1f bedeutet, dass eine Nachkommastelle angegeben werden soll; f = float, %% wird zu Prozentzeichen </span></span>
 <span id="cb17-2"><a href=""></a>plt.title(<span class="st">'Kreisdiagramm'</span>)</span>
@@ -863,12 +863,185 @@ Interpretation
 <li><p>Interpretation der Modalwert-Berechnung: Die meisten Werte liegen bei 3, die Verteilung hat eine Tendenz nach links, da viele niedrige Werte vorkommen.</p></li>
 </ul>
 </section></section>
+<section>
 <section id="section-28" class="title-slide slide level1 smaller center">
 <h1></h1>
 <h2 style="font-size:2.0em">
 Quantifying Kissinger
 </h2>
 <p><br></p>
+</section>
+<section id="section-29" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Parallelen zwischen Häufigkeitsverteilung und Quantifying Kissinger
+</h2>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li>Zählung von Begriffen und Themen in Kissingers Kommunikation<span class="fragment"> &gt;&gt; Häufigkeitsverteilung</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Erfassung zeitlicher Trends<span class="fragment"> &gt;&gt; kumulierte Häufigkeit über Zeit hinweg</span></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Visualisierung von Daten (Wer kommuniziert mit wem?; Welche Themen dominieren?)</li>
+</ul>
+</div>
+</section>
+<section id="section-30" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Beispiel im Stil von “Quantifying Kissinger”
+</h2>
+<p><br></p>
+<p><strong><a href="https://www.henryakissinger.com/speeches/keynote-speech-commemorating-president-ronald-reagans-112th-birthday-ronald-reagan-presidential-foundation-institute/">Text (Rede):</a></strong> “Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good.”</p>
+</section>
+<section id="section-31" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Beispiel: Text vorbereiten und Wörter zählen (Python)“
+</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb25-2"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb25-3"><a href=""></a></span>
+<span id="cb25-4"><a href=""></a><span class="co"># Beispieltext</span></span>
+<span id="cb25-5"><a href=""></a>text <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb25-6"><a href=""></a><span class="st">Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good.</span></span>
+<span id="cb25-7"><a href=""></a><span class="st">"""</span></span>
+<span id="cb25-8"><a href=""></a></span>
+<span id="cb25-9"><a href=""></a><span class="co"># Wörter in Kleinbuchstaben und bereinigt</span></span>
+<span id="cb25-10"><a href=""></a>words <span class="op">=</span> text.lower().replace(<span class="st">"."</span>, <span class="st">""</span>).replace(<span class="st">","</span>, <span class="st">""</span>).split()</span>
+<span id="cb25-11"><a href=""></a>word_freq <span class="op">=</span> Counter(words)</span>
+<span id="cb25-12"><a href=""></a><span class="bu">print</span>(word_freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Counter({'great': 5, 'and': 4, 'a': 4, 'was': 4, 'he': 4, 'as': 3, 'but': 3, 'the': 3, 'of': 3, 'it': 2, 'for': 2, 'we': 2, 'reagan': 2, 'this': 2, 'they': 2, 'from': 2, 'about': 2, 'much': 2, 'what': 2, 'makes': 2, 'friends': 1, 'is': 1, 'special': 1, 'me': 1, 'to': 1, 'speak': 1, 'here': 1, 'today': 1, 'honor': 1, 'again': 1, 'an': 1, 'extraordinary': 1, 'human': 1, 'being': 1, 'hugely': 1, 'successful': 1, 'american': 1, 'president': 1, 'all': 1, 'know': 1, 'ronald': 1, 'truth': 1, 'teller': 1, 'called': 1, '“the': 1, 'communicator”': 1, 'rejected': 1, 'that': 1, 'title': 1, 'saying:': 1, '“i': 1, 'wasn’t': 1, 'communicator': 1, 'i': 1, 'communicated': 1, 'things': 1, 'didn’t': 1, 'spring': 1, 'full': 1, 'bloom': 1, 'my': 1, 'brow': 1, 'came': 1, 'heart': 1, 'nation”': 1, 'too': 1, 'modest': 1, 'first': 1, 'part': 1, 'right': 1, 'second': 1, 'crystallized': 1, 'nation': 1, 'just': 1, 'importantly': 1, 'good': 1})</code></pre>
+</div>
+</div>
+</section>
+<section id="section-32" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Beispiel: Relative Häufigkeit (Python)
+</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>total_words <span class="op">=</span> <span class="bu">sum</span>(word_freq.values())</span>
+<span id="cb27-2"><a href=""></a>rel_freq <span class="op">=</span> {word: <span class="bu">round</span>(count <span class="op">/</span> total_words <span class="op">*</span> <span class="dv">100</span>, <span class="dv">2</span>) <span class="cf">for</span> word, count <span class="kw">in</span> word_freq.items()}</span>
+<span id="cb27-3"><a href=""></a><span class="bu">print</span>(rel_freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'friends': 0.9, 'it': 1.8, 'is': 0.9, 'special': 0.9, 'for': 1.8, 'me': 0.9, 'to': 0.9, 'speak': 0.9, 'here': 0.9, 'today': 0.9, 'as': 2.7, 'we': 1.8, 'honor': 0.9, 'again': 0.9, 'an': 0.9, 'extraordinary': 0.9, 'human': 0.9, 'being': 0.9, 'and': 3.6, 'a': 3.6, 'hugely': 0.9, 'successful': 0.9, 'american': 0.9, 'president': 0.9, 'all': 0.9, 'know': 0.9, 'ronald': 0.9, 'reagan': 1.8, 'was': 3.6, 'truth': 0.9, 'teller': 0.9, 'this': 1.8, 'he': 3.6, 'called': 0.9, '“the': 0.9, 'great': 4.5, 'communicator”': 0.9, 'but': 2.7, 'rejected': 0.9, 'that': 0.9, 'title': 0.9, 'saying:': 0.9, '“i': 0.9, 'wasn’t': 0.9, 'communicator': 0.9, 'i': 0.9, 'communicated': 0.9, 'things': 0.9, 'they': 1.8, 'didn’t': 0.9, 'spring': 0.9, 'full': 0.9, 'bloom': 0.9, 'from': 1.8, 'my': 0.9, 'brow': 0.9, 'came': 0.9, 'the': 2.7, 'heart': 0.9, 'of': 2.7, 'nation”': 0.9, 'too': 0.9, 'modest': 0.9, 'about': 1.8, 'first': 0.9, 'part': 0.9, 'right': 0.9, 'second': 0.9, 'crystallized': 0.9, 'much': 1.8, 'what': 1.8, 'makes': 1.8, 'nation': 0.9, 'just': 0.9, 'importantly': 0.9, 'good': 0.9}</code></pre>
+</div>
+</div>
+</section>
+<section id="section-33" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Beispiel: Text vorbereiten und Wörter zählen (RStudio)“
+</h2>
+<p><br></p>
+<p><strong>Text</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href=""></a>text <span class="ot">&lt;-</span> <span class="st">"Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good."</span></span>
+<span id="cb29-2"><a href=""></a><span class="co"># Text zu Kleinbuchstaben &amp; entfernen von Satzzeichen</span></span>
+<span id="cb29-3"><a href=""></a>text_clean <span class="ot">&lt;-</span> <span class="fu">tolower</span>(<span class="fu">gsub</span>(<span class="st">"[[:punct:]]"</span>, <span class="st">""</span>, text))</span>
+<span id="cb29-4"><a href=""></a><span class="co"># In Wörter zerlegen</span></span>
+<span id="cb29-5"><a href=""></a>words <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(text_clean, <span class="st">"</span><span class="sc">\\</span><span class="st">s+"</span>))</span>
+<span id="cb29-6"><a href=""></a><span class="co"># Häufigkeit zählen</span></span>
+<span id="cb29-7"><a href=""></a>word_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(words)</span>
+<span id="cb29-8"><a href=""></a><span class="fu">print</span>(word_freq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>words
+            a         about         again           all      american 
+            4             2             1             1             1 
+           an           and            as         being         bloom 
+            1             4             3             1             1 
+         brow           but        called          came  communicated 
+            1             3             1             1             1 
+ communicator  crystallized         didnt extraordinary         first 
+            2             1             1             1             1 
+          for       friends          from          full          good 
+            2             1             2             1             1 
+        great            he         heart          here         honor 
+            5             4             1             1             1 
+       hugely         human             i   importantly            is 
+            1             1             2             1             1 
+           it          just          know         makes            me 
+            2             1             1             2             1 
+       modest          much            my        nation            of 
+            1             2             1             2             3 
+         part     president        reagan      rejected         right 
+            1             1             2             1             1 
+       ronald        saying        second         speak       special 
+            1             1             1             1             1 
+       spring    successful        teller          that           the 
+            1             1             1             1             4 
+         they        things          this         title            to 
+            2             1             2             1             1 
+        today           too         truth           was         wasnt 
+            1             1             1             4             1 
+           we          what 
+            2             2 </code></pre>
+</div>
+</div>
+</section>
+<section id="section-34" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Beispiel: Relative Häufigkeit (RStudio)
+</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href=""></a>rel_freq <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(word_freq)</span>
+<span id="cb31-2"><a href=""></a><span class="fu">round</span>(rel_freq <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>)  <span class="co"># in Prozent</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>words
+            a         about         again           all      american 
+          3.6           1.8           0.9           0.9           0.9 
+           an           and            as         being         bloom 
+          0.9           3.6           2.7           0.9           0.9 
+         brow           but        called          came  communicated 
+          0.9           2.7           0.9           0.9           0.9 
+ communicator  crystallized         didnt extraordinary         first 
+          1.8           0.9           0.9           0.9           0.9 
+          for       friends          from          full          good 
+          1.8           0.9           1.8           0.9           0.9 
+        great            he         heart          here         honor 
+          4.5           3.6           0.9           0.9           0.9 
+       hugely         human             i   importantly            is 
+          0.9           0.9           1.8           0.9           0.9 
+           it          just          know         makes            me 
+          1.8           0.9           0.9           1.8           0.9 
+       modest          much            my        nation            of 
+          0.9           1.8           0.9           1.8           2.7 
+         part     president        reagan      rejected         right 
+          0.9           0.9           1.8           0.9           0.9 
+       ronald        saying        second         speak       special 
+          0.9           0.9           0.9           0.9           0.9 
+       spring    successful        teller          that           the 
+          0.9           0.9           0.9           0.9           3.6 
+         they        things          this         title            to 
+          1.8           0.9           1.8           0.9           0.9 
+        today           too         truth           was         wasnt 
+          0.9           0.9           0.9           3.6           0.9 
+           we          what 
+          1.8           1.8 </code></pre>
+</div>
+</div>
+</section></section>
+<section id="section-35" class="title-slide slide level1 smaller center">
+<h1></h1>
+<h2 style="font-size:2.0em">
+Aufgabe
+</h2>
+<p><br></p>
+<p>Erstellt mit Python und RStudio ein Säulen- und ein Kreisdiagramm zu den Top 10 Wörtern des Textauszugs. Legt die Datei in den Abgabeordner “Kissinger”. Verwendet hierfür folgendes Dateinamensschema: 01_Name_Kissinger.[Dateiendung] <strong>Abgabe-Deadline:</strong> 12.05.2025</p>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p><strong>Dr.&nbsp;Franziska Klemstein</strong> | © 2025 | <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p>
