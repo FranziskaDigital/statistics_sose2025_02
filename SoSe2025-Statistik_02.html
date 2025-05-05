@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="SoSe2025-Statistik_02_files/libs/revealjs/dist/theme/quarto.css">
   <link href="SoSe2025-Statistik_02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -470,6 +535,15 @@ Grafische Darstellungen
 Säulendiagramm
 </h2>
 <p><br></p>
+<ul>
+<li>ist geeignet für <strong>diskrete Merkmale</strong> (zählbar, endlich), z. Bsp.: Schulnoten</li>
+<li>jede Säule steht für einen bestimmten Wert</li>
+<li>die Höhe der Säule entspricht der Häufigkeit</li>
+</ul>
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Saeulendiagramm-Beispiel.svg" width="400">
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Quelle: Wikipedia-Eintrag: <a href="https://commons.wikimedia.org/wiki/File:Saeulendiagramm-Beispiel.svg">Säulendiagramm. Daraus: Beispiel eines Säulendiagramms</a> [zuletzt abgerufen: 05.05.2025].
+</p>
 </section>
 <section id="section-10" class="slide level2 smaller">
 <h2></h2>
@@ -477,6 +551,15 @@ Säulendiagramm
 Kreisdiagramm
 </h2>
 <p><br></p>
+<ul>
+<li>ist geeignet für <strong>relative Häufigkeiten</strong></li>
+<li>ist in Segmente unterteilt, die dem Anteil entsprechen</li>
+<li>ist geeignet für einen schnellen prozentualen Überblick</li>
+</ul>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Pie-chart.jpg" height="300"></p>
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Quelle: Wikimedia Commons: <a href="https://upload.wikimedia.org/wikipedia/commons/6/63/Pie-chart.jpg">Beispiel eines Kreisdiagramms oder Pie-Chart</a> [zuletzt abgerufen: 05.05.2025].
+</p>
 </section>
 <section id="section-11" class="slide level2 smaller">
 <h2></h2>
@@ -484,16 +567,303 @@ Kreisdiagramm
 Histogramm
 </h2>
 <p><br></p>
+<ul>
+<li>geeignet für <strong>metrische, kontinuierliche Daten</strong> (z. Bsp. Einkommen)</li>
+<li>Klassenbreiten können unterschiedlich sein</li>
+<li>die Fläche der Balken entspricht der Häufigkeit, nicht die Höhe</li>
+</ul>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Histogramm_Diskriminanzanalyse_Prim%C3%A4rdatensatz.png" width="300" class="r-stretch"><p style="font-size: 0.6em; margin-top: 0.5em;">
+Quelle: Wikimedia Commons: <a href="https://upload.wikimedia.org/wikipedia/commons/b/b4/Histogramm_Diskriminanzanalyse_Prim%C3%A4rdatensatz.png">Histogramm einer Diskriminanzanalyse</a> [zuletzt abgerufen: 05.05.2025].
+</p>
+</section>
+<section id="section-12" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Tipps zur Darstellung
+</h2>
+<p><br></p>
+<ul>
+<li>Achsen müssen beschriftet sein.</li>
+<li>Die Wahl der Darstellung hängt vom Datentyp ab.</li>
+<li>Relative Häufigkeiten eignen sich besser für Vergleiche.</li>
+</ul>
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Literaturhinweis:<br> <a href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/DEMonografie_derivate_00000185/GrafikerstellungLeitfaden.pdf">Statistisches Bundesamt (Hrsg.): Leitfaden zur Erstellung von Grafiken in Veröffentlichungen des Statistischen Bundesmates, Wiesbaden 2014.</a>
+</p>
 </section></section>
-<section id="section-12" class="title-slide slide level1 smaller center">
+<section>
+<section id="section-13" class="title-slide slide level1 smaller center">
 <h1></h1>
 <h2 style="font-size:1.8em">
 Häufigkeiten berechnen mit Python und RStudio
 </h2>
 <p><br></p>
 </section>
+<section id="section-14" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Absolute Häufigkeiten berechnen
+</h2>
+<p><br></p>
+<ul>
+<li>Wie oft kommt jeder Wert in einem Datensatz vor?</li>
+</ul>
+<p>Beispiel-Daten: [2, 3, 2, 4, 3, 3, 5, 2, 4]</p>
+<p><strong>Python:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a>daten <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
+<span id="cb1-4"><a href=""></a>absolute_haeufigkeit <span class="op">=</span> Counter(daten)</span>
+<span id="cb1-5"><a href=""></a><span class="bu">print</span>(absolute_haeufigkeit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Counter({2: 3, 3: 3, 4: 2, 5: 1})</code></pre>
+</div>
+</div>
+<p><strong>RStudio:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>daten <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>)</span>
+<span id="cb3-2"><a href=""></a><span class="fu">table</span>(daten)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>daten
+2 3 4 5 
+3 3 2 1 </code></pre>
+</div>
+</div>
+</section>
+<section id="section-15" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Relative Häufigkeiten berechnen
+</h2>
+<p><br></p>
+<ul>
+<li>Die absolute Häufigkeit wird durch die Gesamtzahl der Daten geteilt.</li>
+</ul>
+<p><strong>Python (ohne Bibliotheken):</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>rel_haeufigkeit <span class="op">=</span> {k: v <span class="op">/</span> <span class="bu">len</span>(daten) <span class="cf">for</span> k, v <span class="kw">in</span> absolute_haeufigkeit.items()}</span>
+<span id="cb5-2"><a href=""></a><span class="bu">print</span>(rel_haeufigkeit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{2: 0.3333333333333333, 3: 0.3333333333333333, 4: 0.2222222222222222, 5: 0.1111111111111111}</code></pre>
+</div>
+</div>
+<ul>
+<li>Erstellung einer Schlüssel-Wert-Tabelle (“Dictionary Comprehension”)</li>
+<li>for-Schleife über Schlüssel (k) und Wert (v) im Zähler-Dictionary</li>
+<li>v / len(daten) berechnet die relative Häufigkeit</li>
+<li>k: v / len(daten) speichert das Ergebnis im Dictionary</li>
+</ul>
+</section>
+<section id="section-16" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Relative Häufigkeiten berechnen
+</h2>
+<p><br></p>
+<p><strong>Python (mit Pandas):</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a>daten <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>]</span>
+<span id="cb7-4"><a href=""></a>rel_haeufigkeit <span class="op">=</span> pd.Series(daten).value_counts(normalize<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-5"><a href=""></a><span class="bu">print</span>(rel_haeufigkeit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2    0.333333
+3    0.333333
+4    0.222222
+5    0.111111
+Name: proportion, dtype: float64</code></pre>
+</div>
+</div>
+<ul>
+<li>pd.Series(daten) erstellt ein Pandas-Series-Objekt aus der Liste daten</li>
+<li>value_counts() ist eine Methode der Pandas-Bibliothek, bei der gezählt wird, wie oft jeder Wert in der Series vorkommt</li>
+<li>mit der Angabe “normalize=True” wird die Ausgabe als relative Häufigkeit zurückgegeben und nicht als absolute Häufigkeit</li>
+</ul>
+</section>
+<section id="section-17" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Relative Häufigkeiten berechnen
+</h2>
+<p><br></p>
+<p><strong>RStudio</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>rel_haeufigkeit <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(daten))</span>
+<span id="cb9-2"><a href=""></a><span class="fu">print</span>(rel_haeufigkeit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>daten
+        2         3         4         5 
+0.3333333 0.3333333 0.2222222 0.1111111 </code></pre>
+</div>
+</div>
+<ul>
+<li>prop.table() ist eine R-Funktion, die Proportionen, d.h. relative Häufigkeiten, berechnet</li>
+<li>diese Funktion wandelt die absoluten Häufigkeiten, die durch die table() erzeugt wird, in relative Häufigkeiten um, indem sie die Häufigkeit jedes Wertes durch die Gesamtzahl der Werte teilt.</li>
+</ul>
+</section></section>
+<section>
+<section id="section-18" class="title-slide slide level1 smaller center">
+<h1></h1>
+<h2 style="font-size:1.8em">
+Diagramme erstellen mit Python und RStudio
+</h2>
+<p><br></p>
+</section>
+<section id="section-19" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Säulendiagramme
+</h2>
+<p><br></p>
+<p><strong>Python (mit matplotlib):</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a>plt.bar(absolute_haeufigkeit.keys(), absolute_haeufigkeit.values())</span>
+<span id="cb11-4"><a href=""></a>plt.xlabel(<span class="st">'Wert'</span>)</span>
+<span id="cb11-5"><a href=""></a>plt.ylabel(<span class="st">'Absolute Häufigkeit'</span>)</span>
+<span id="cb11-6"><a href=""></a>plt.title(<span class="st">'Säulendiagramm'</span>)</span>
+<span id="cb11-7"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
-<section id="section-13" class="title-slide slide level1 smaller center">
+</div>
+<img data-src="SoSe2025-Statistik_02_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="section-20" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Säulendiagramme
+</h2>
+<p><br></p>
+<p><strong>RStudio:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a><span class="fu">barplot</span>(<span class="fu">table</span>(daten), <span class="at">col=</span><span class="st">"lightblue"</span>, </span>
+<span id="cb12-2"><a href=""></a><span class="at">main=</span><span class="st">"Säulendiagramm"</span>, <span class="at">xlab=</span><span class="st">"Wert"</span>, <span class="at">ylab=</span><span class="st">"Häufigkeit"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="SoSe2025-Statistik_02_files/figure-revealjs/unnamed-chunk-7-3.png" width="960" class="r-stretch"></section>
+<section id="section-21" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Histogramme
+</h2>
+<p><br></p>
+<p><strong>Python (mit matplotlib):</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>plt.hist(daten, bins<span class="op">=</span><span class="dv">2</span>, edgecolor<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb13-2"><a href=""></a><span class="co">## Bins ist das Argument für die Definition der Anzahl von Intervallen in Python</span></span>
+<span id="cb13-3"><a href=""></a>plt.xlabel(<span class="st">'Werte'</span>)</span>
+<span id="cb13-4"><a href=""></a>plt.ylabel(<span class="st">'Häufigkeit'</span>)</span>
+<span id="cb13-5"><a href=""></a>plt.title(<span class="st">'Histogramm'</span>)</span>
+<span id="cb13-6"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="SoSe2025-Statistik_02_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="section-22" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Histogramme
+</h2>
+<p><br></p>
+<p><strong>RStudio:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="fu">hist</span>(daten, <span class="at">breaks=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">"lightgreen"</span>, <span class="at">main=</span><span class="st">"Histogramm"</span>,</span>
+<span id="cb14-2"><a href=""></a><span class="do">## Breaks ist das Argument für die Definition der Anzahl von Intervallen in R </span></span>
+<span id="cb14-3"><a href=""></a><span class="at">xlab=</span><span class="st">"Wert"</span>, <span class="at">ylab=</span><span class="st">"Häufigkeit"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="SoSe2025-Statistik_02_files/figure-revealjs/unnamed-chunk-9-3.png" width="960" class="r-stretch"></section>
+<section id="section-23" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Kreisdiagramme
+</h2>
+<p><br></p>
+<p><strong>Python (mit matplotlib):</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>plt.pie(rel_haeufigkeit.values, labels<span class="op">=</span>rel_haeufigkeit.index, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>([&lt;matplotlib.patches.Wedge object at 0x13ecc3520&gt;, &lt;matplotlib.patches.Wedge object at 0x13ecc3160&gt;, &lt;matplotlib.patches.Wedge object at 0x13ecd4430&gt;, &lt;matplotlib.patches.Wedge object at 0x13ece25e0&gt;], [Text(0.5499999722395388, 0.9526279601903919, '2'), Text(-1.0999999999999959, -9.616505800409723e-08, '3'), Text(0.19101348711923324, -1.0832884416158748, '4'), Text(1.0336617954935041, -0.37622239770798543, '5')], [Text(0.29999998485793017, 0.5196152510129409, '33.3%'), Text(-0.5999999999999978, -5.2453668002234845e-08, '33.3%'), Text(0.10418917479230903, -0.5908846045177498, '22.2%'), Text(0.5638155248146386, -0.2052122169316284, '11.1%')])</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co">## autopct zeigt bei jedem Torstenstück den Prozentwert an; %1.1f bedeutet, dass eine Nachkommastelle angegeben werden soll; f = float, %% wird zu Prozentzeichen </span></span>
+<span id="cb17-2"><a href=""></a>plt.title(<span class="st">'Kreisdiagramm'</span>)</span>
+<span id="cb17-3"><a href=""></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="SoSe2025-Statistik_02_files/figure-revealjs/unnamed-chunk-10-1.png" width="960" class="r-stretch"></section>
+<section id="section-24" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Kreisdiagramme
+</h2>
+<p><br></p>
+<p><strong>RStudio:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="fu">pie</span>(rel_haeufigkeit, <span class="at">main=</span><span class="st">"Kreisdiagramm"</span>, </span>
+<span id="cb18-2"><a href=""></a><span class="at">col=</span><span class="fu">rainbow</span>(<span class="fu">length</span>(rel_haeufigkeit)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="SoSe2025-Statistik_02_files/figure-revealjs/unnamed-chunk-11-3.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="section-25" class="title-slide slide level1 smaller center">
+<h1></h1>
+<h2 style="font-size:2.0em">
+Verteilung interpretieren
+</h2>
+<p><br></p>
+<ul>
+<li>Gibt es einen Modus (häufigster Wert)?</li>
+<li>Ist die Verteilung symmetrisch oder schief?</li>
+<li>Gibt es Ausreißer?</li>
+</ul>
+</section>
+<section id="section-26" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Modus berechnen
+</h2>
+<p><br></p>
+<p><strong>Python (mit statistics):</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">import</span> statistics</span>
+<span id="cb19-2"><a href=""></a></span>
+<span id="cb19-3"><a href=""></a>modus <span class="op">=</span> statistics.mode(daten)</span>
+<span id="cb19-4"><a href=""></a>mittelwert <span class="op">=</span> statistics.mean(daten)</span>
+<span id="cb19-5"><a href=""></a><span class="bu">print</span>(<span class="ss">f"Modus: </span><span class="sc">{</span>modus<span class="sc">}</span><span class="ss">, Mittelwert: </span><span class="sc">{</span>mittelwert<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Modus: 2, Mittelwert: 3.111111111111111</code></pre>
+</div>
+</div>
+<p><strong>RStudio:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href=""></a>modus <span class="ot">&lt;-</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(daten), <span class="at">decreasing=</span><span class="cn">TRUE</span>))[<span class="dv">1</span>]</span>
+<span id="cb21-2"><a href=""></a>mittelwert <span class="ot">&lt;-</span> <span class="fu">mean</span>(daten)</span>
+<span id="cb21-3"><a href=""></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Modus:"</span>, modus))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Modus: 2"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href=""></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Mittelwert:"</span>, mittelwert))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Mittelwert: 3.11111111111111"</code></pre>
+</div>
+</div>
+</section>
+<section id="section-27" class="slide level2 smaller">
+<h2></h2>
+<h2 style="font-size:1.8em">
+Interpretation
+</h2>
+<p><br></p>
+<ul>
+<li><p>Modus und Mittelwert sind Maßzahlen der <strong>zentralen Tendenz</strong>.</p></li>
+<li><p>Die zentrale Tendenz gibt an, um welchen Wert die Datenwerte in einer Stichprobe oder Verteilung <strong>tendenziell konzentriert</strong> sind.</p></li>
+<li><p><strong>Modus/Modalwert:</strong> Ist der am häufigsten vorkommende Wert in einer Datenreihe.</p></li>
+<li><p><strong>Mittelwert:</strong> Gibt den Durchschnitt an.</p></li>
+<li><p>Interpretation der Modalwert-Berechnung: Die meisten Werte liegen bei 3, die Verteilung hat eine Tendenz nach links, da viele niedrige Werte vorkommen.</p></li>
+</ul>
+</section></section>
+<section id="section-28" class="title-slide slide level1 smaller center">
 <h1></h1>
 <h2 style="font-size:2.0em">
 Quantifying Kissinger
@@ -556,7 +926,7 @@ Quantifying Kissinger
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -715,6 +1085,44 @@ Quantifying Kissinger
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

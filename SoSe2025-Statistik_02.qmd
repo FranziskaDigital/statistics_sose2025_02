@@ -4,6 +4,10 @@ subtitle: "Grundlagen der quantitativen Analyse und Visualisierung digitaler Inf
 format: 
   revealjs:
     theme: default
+    slide-number: true
+execute:
+  echo: true
+  enabled: true
 footer: |
       **Dr. Franziska Klemstein** | © 2025 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 output-dir: docs
@@ -126,19 +130,273 @@ $$\prod_{i=1}^{4}x_i \cdot y_i = (6 \cdot 1) \cdot (4 \cdot 3) \cdot (1 \cdot 4)
 <h2 style="font-size:1.8em">Säulendiagramm</h2>
 <br>
 
+* ist geeignet für **diskrete Merkmale** (zählbar, endlich), z. Bsp.: Schulnoten
+* jede Säule steht für einen bestimmten Wert 
+* die Höhe der Säule entspricht der Häufigkeit 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Saeulendiagramm-Beispiel.svg" width="400">
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Quelle: Wikipedia-Eintrag: <a href="https://commons.wikimedia.org/wiki/File:Saeulendiagramm-Beispiel.svg">Säulendiagramm. Daraus: Beispiel eines Säulendiagramms</a> [zuletzt abgerufen: 05.05.2025]. 
+</p>
+
 
 ## {.smaller}
 <h2 style="font-size:1.8em">Kreisdiagramm</h2>
 <br>
 
+* ist geeignet für **relative Häufigkeiten**
+* ist in Segmente unterteilt, die dem Anteil entsprechen 
+* ist geeignet für einen schnellen prozentualen Überblick
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Pie-chart.jpg" height="300">
+
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Quelle: Wikimedia Commons: <a href="https://upload.wikimedia.org/wikipedia/commons/6/63/Pie-chart.jpg">Beispiel eines Kreisdiagramms oder Pie-Chart</a> [zuletzt abgerufen: 05.05.2025]. 
+</p>
+
 ## {.smaller}
 <h2 style="font-size:1.8em">Histogramm</h2>
 <br>
+
+* geeignet für **metrische, kontinuierliche Daten** (z. Bsp. Einkommen)
+* Klassenbreiten können unterschiedlich sein 
+* die Fläche der Balken entspricht der Häufigkeit, nicht die Höhe 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Histogramm_Diskriminanzanalyse_Prim%C3%A4rdatensatz.png" width="300">
+
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Quelle: Wikimedia Commons: <a href="https://upload.wikimedia.org/wikipedia/commons/b/b4/Histogramm_Diskriminanzanalyse_Prim%C3%A4rdatensatz.png">Histogramm einer Diskriminanzanalyse</a> [zuletzt abgerufen: 05.05.2025]. 
+</p>
+
+## {.smaller}
+<h2 style="font-size:1.8em">Tipps zur Darstellung</h2>
+<br>
+
+* Achsen müssen beschriftet sein. 
+* Die Wahl der Darstellung hängt vom Datentyp ab. 
+* Relative Häufigkeiten eignen sich besser für Vergleiche.
+
+<p style="font-size: 0.6em; margin-top: 0.5em;">
+Literaturhinweis:<br> 
+<a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.statistischebibliothek.de/mir/servlets/MCRFileNodeServlet/DEMonografie_derivate_00000185/GrafikerstellungLeitfaden.pdf">Statistisches Bundesamt (Hrsg.): Leitfaden zur Erstellung von Grafiken in Veröffentlichungen des Statistischen Bundesmates, Wiesbaden 2014.</a>
+</p>
 
 # {.smaller}
 <h2 style="font-size:1.8em">Häufigkeiten berechnen mit Python und RStudio</h2>
 <br>
 
+## {.smaller}
+<h2 style="font-size:1.8em">Absolute Häufigkeiten berechnen</h2>
+<br>
+
+* Wie oft kommt jeder Wert in einem Datensatz vor?
+
+Beispiel-Daten:
+    [2, 3, 2, 4, 3, 3, 5, 2, 4]
+
+**Python:**
+
+```{python}
+#| echo: true
+from collections import Counter
+
+daten = [2, 3, 2, 4, 3, 3, 5, 2, 4]
+absolute_haeufigkeit = Counter(daten)
+print(absolute_haeufigkeit)
+
+```
+
+**RStudio:**
+```{r}
+#| echo: true
+
+daten <- c(2, 3, 2, 4, 3, 3, 5, 2, 4)
+table(daten)
+```
+
+
+## {.smaller}
+<h2 style="font-size:1.8em">Relative Häufigkeiten berechnen</h2>
+<br>
+
+* Die absolute Häufigkeit wird durch die Gesamtzahl der Daten geteilt.
+
+**Python (ohne Bibliotheken):**
+
+```{python}
+#| echo: true
+
+rel_haeufigkeit = {k: v / len(daten) for k, v in absolute_haeufigkeit.items()}
+print(rel_haeufigkeit)
+```
+
+* Erstellung einer Schlüssel-Wert-Tabelle ("Dictionary Comprehension")
+* for-Schleife über Schlüssel (k) und Wert (v) im Zähler-Dictionary
+* v / len(daten) berechnet die relative Häufigkeit 
+* k: v / len(daten) speichert das Ergebnis im Dictionary
+
+## {.smaller}
+<h2 style="font-size:1.8em">Relative Häufigkeiten berechnen</h2>
+<br>
+
+**Python (mit Pandas):**
+
+```{python}
+#| echo: true
+
+import pandas as pd
+
+daten = [2, 3, 2, 4, 3, 3, 5, 2, 4]
+rel_haeufigkeit = pd.Series(daten).value_counts(normalize=True)
+print(rel_haeufigkeit)
+```
+
+* pd.Series(daten) erstellt ein Pandas-Series-Objekt aus der Liste daten
+* value_counts() ist eine Methode der Pandas-Bibliothek, bei der gezählt wird, wie oft jeder Wert in der Series vorkommt
+* mit der Angabe "normalize=True" wird die Ausgabe als relative Häufigkeit zurückgegeben und nicht als absolute Häufigkeit
+
+## {.smaller}
+<h2 style="font-size:1.8em">Relative Häufigkeiten berechnen</h2>
+<br>
+
+**RStudio**
+
+```{r}
+rel_haeufigkeit <- prop.table(table(daten))
+print(rel_haeufigkeit)
+```
+
+* prop.table() ist eine R-Funktion, die Proportionen, d.h. relative Häufigkeiten, berechnet
+* diese Funktion wandelt die absoluten Häufigkeiten, die durch die table() erzeugt wird, in relative Häufigkeiten um, indem sie die Häufigkeit jedes Wertes durch die Gesamtzahl der Werte teilt.
+
+
+# {.smaller}
+<h2 style="font-size:1.8em">Diagramme erstellen mit Python und RStudio</h2>
+<br>
+
+## {.smaller}
+<h2 style="font-size:1.8em">Säulendiagramme</h2>
+<br>
+
+**Python (mit matplotlib):**
+
+```{python}
+import matplotlib.pyplot as plt
+
+plt.bar(absolute_haeufigkeit.keys(), absolute_haeufigkeit.values())
+plt.xlabel('Wert')
+plt.ylabel('Absolute Häufigkeit')
+plt.title('Säulendiagramm')
+plt.show()
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Säulendiagramme</h2>
+<br>
+
+**RStudio:**
+
+```{r}
+barplot(table(daten), col="lightblue", 
+main="Säulendiagramm", xlab="Wert", ylab="Häufigkeit")
+```
+
+
+## {.smaller}
+<h2 style="font-size:1.8em">Histogramme</h2>
+<br>
+
+**Python (mit matplotlib):**
+
+```{python}
+plt.hist(daten, bins=2, edgecolor='black')
+## Bins ist das Argument für die Definition der Anzahl von Intervallen in Python
+plt.xlabel('Werte')
+plt.ylabel('Häufigkeit')
+plt.title('Histogramm')
+plt.show()
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Histogramme</h2>
+<br>
+
+**RStudio:**
+
+```{r}
+hist(daten, breaks=2, col="lightgreen", main="Histogramm",
+## Breaks ist das Argument für die Definition der Anzahl von Intervallen in R 
+xlab="Wert", ylab="Häufigkeit")
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Kreisdiagramme</h2>
+<br>
+
+**Python (mit matplotlib):**
+
+```{python}
+plt.pie(rel_haeufigkeit.values, labels=rel_haeufigkeit.index, autopct='%1.1f%%')
+## autopct zeigt bei jedem Torstenstück den Prozentwert an; %1.1f bedeutet, dass eine Nachkommastelle angegeben werden soll; f = float, %% wird zu Prozentzeichen 
+plt.title('Kreisdiagramm')
+plt.show()
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Kreisdiagramme</h2>
+<br>
+
+**RStudio:**
+
+```{r}
+pie(rel_haeufigkeit, main="Kreisdiagramm", 
+col=rainbow(length(rel_haeufigkeit)))
+```
+
+
+# {.smaller}
+<h2 style="font-size:2.0em">Verteilung interpretieren</h2>
+<br>
+
+* Gibt es einen Modus (häufigster Wert)?
+* Ist die Verteilung symmetrisch oder schief?
+* Gibt es Ausreißer?
+
+## {.smaller}
+<h2 style="font-size:1.8em">Modus berechnen</h2>
+<br>
+
+**Python (mit statistics):**
+
+```{python}
+import statistics
+
+modus = statistics.mode(daten)
+mittelwert = statistics.mean(daten)
+print(f"Modus: {modus}, Mittelwert: {mittelwert}")
+
+```
+
+**RStudio:**
+```{r}
+modus <- names(sort(table(daten), decreasing=TRUE))[1]
+mittelwert <- mean(daten)
+print(paste("Modus:", modus))
+print(paste("Mittelwert:", mittelwert))
+```
+
+## {.smaller}
+<h2 style="font-size:1.8em">Interpretation</h2>
+<br>
+
+* Modus und Mittelwert sind Maßzahlen der **zentralen Tendenz**.
+* Die zentrale Tendenz gibt an, um welchen Wert die Datenwerte in einer Stichprobe oder Verteilung **tendenziell konzentriert** sind.
+* **Modus/Modalwert:** Ist der am häufigsten vorkommende Wert in einer Datenreihe.
+* **Mittelwert:** Gibt den Durchschnitt an.
+
+* Interpretation der Modalwert-Berechnung: Die meisten Werte liegen bei 3, die Verteilung hat eine Tendenz nach links, da viele niedrige Werte vorkommen.
+
 # {.smaller}
 <h2 style="font-size:2.0em">Quantifying Kissinger</h2>
 <br>
+
