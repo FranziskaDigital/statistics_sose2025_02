@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-2",
+    "href": "SoSe2025-Statistik_02.html#section-2",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Merkmalstypen (Arten von Variablen)\n\nQualitativ\n\nNominal: keine Reihenfolge (z.B. Berufe)\nOrdinal: Reihenfolge ja, aber keine genauen Abstände (z.B. Bewertungen wie: gut, mittel, schlecht)\n\nQuantitativ\n\nKardinal: Reihenfolge und Werte mit festen Abständen (z.B. Alter)\n\nIntervallskaliert: ohne “echten” Nullpunkt, gleiche Abstände (z.B. Temperatur in °C)\nVerhältnisskaliert: mit Nullpunkt (z.B. Gewicht, Alter), gleiche Abstände\ndiskrete (zählbar: ganzzahlig, endlich viele Werte) oder stetige Merkmale (beliebig viele Zwischenwerte möglich)"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-3",
+    "href": "SoSe2025-Statistik_02.html#section-3",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Skalenniveaus\n\n Das Skalenniveau gibt an, welche (mathematischen) Operationen mit einer entsperechend skalierten Variable zulässig sind.\n\n\nQuelle: Wikipedia-Eintrag: Skalenniveau [zuletzt abgerufen: 04.05.2025]."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-4",
+    "href": "SoSe2025-Statistik_02.html#section-4",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Häufigkeiten\n\n\n\nDie absolute Häufigkeit gibt an, wie oft ein bestimmter Wert, d.h. eine bestimmte Merkmalsausprägung vorkommt.\nDie relative Häufigkeit gibt an, wie groß der Anteil eines Wertes im Vergleich zur Gesamtzahl ist.\n\nAbsolute Häufigkeit : Gesamtzahl der Beobachtungen = Relative Häufigkeit.\n\n\nDie relative Häufigkeit wird oft auch in Prozent angegeben.\n\nDie Kumulative Häufigkeit zeigt die aufsummierten Häufigkeiten bis zu einem bestimmten Wert.\n\nWichtig für Aussagen wie: „Wie viel Prozent haben höchstens 3 Punkte erreicht?“"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-6",
+    "href": "SoSe2025-Statistik_02.html#section-6",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Summen berechnen\n\n Gegeben sind zwei Zahlenreihen:\n\\(x_i = 6, 4, 1, 3\\)\n\\(y_i = 1, 3, 4, 2\\)\nSumme von xi:\n\\[\\sum_{i=1}^{4}x_i=6+4+1+3=14\\]\nSumme von xi * yi: \\[\\sum_{i=1}^{4}x_i⋅y_i=(6⋅1)+(4⋅3)+(1⋅4)+(3⋅2)=6+12+4+6=28\\]"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-7",
+    "href": "SoSe2025-Statistik_02.html#section-7",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Produkte berechnen\n\n Gegeben sind zwei Zahlenreihen:\n\\(x_i = 6, 4, 1, 3\\)\n\\(y_i = 1, 3, 4, 2\\)\nProdukt aller xi: \\[\\prod_{i=1}^{4}x_i= 6 \\cdot 4 \\cdot 1 \\cdot 3=72\\]\nProdukt von xi * yi:\n\\[\\prod_{i=1}^{4}x_i \\cdot y_i = (6 \\cdot 1) \\cdot (4 \\cdot 3) \\cdot (1 \\cdot 4) \\cdot (3 \\cdot 2) = 6 \\cdot 12 \\cdot 4 \\cdot 6 = 1728\\]"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-9",
+    "href": "SoSe2025-Statistik_02.html#section-9",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Säulendiagramm\n\n\n\nist geeignet für diskrete Merkmale (zählbar, endlich), z. Bsp.: Schulnoten\njede Säule steht für einen bestimmten Wert\ndie Höhe der Säule entspricht der Häufigkeit\n\n\n\nQuelle: Wikipedia-Eintrag: Säulendiagramm. Daraus: Beispiel eines Säulendiagramms [zuletzt abgerufen: 05.05.2025]."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-10",
+    "href": "SoSe2025-Statistik_02.html#section-10",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Kreisdiagramm\n\n\n\nist geeignet für relative Häufigkeiten\nist in Segmente unterteilt, die dem Anteil entsprechen\nist geeignet für einen schnellen prozentualen Überblick\n\n\n\nQuelle: Wikimedia Commons: Beispiel eines Kreisdiagramms oder Pie-Chart [zuletzt abgerufen: 05.05.2025]."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-11",
+    "href": "SoSe2025-Statistik_02.html#section-11",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Histogramm\n\n\n\ngeeignet für metrische, kontinuierliche Daten (z. Bsp. Einkommen)\nKlassenbreiten können unterschiedlich sein\ndie Fläche der Balken entspricht der Häufigkeit, nicht die Höhe\n\n\n\nQuelle: Wikimedia Commons: Histogramm einer Diskriminanzanalyse [zuletzt abgerufen: 05.05.2025]."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-12",
+    "href": "SoSe2025-Statistik_02.html#section-12",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Tipps zur Darstellung\n\n\n\nAchsen müssen beschriftet sein.\nDie Wahl der Darstellung hängt vom Datentyp ab.\nRelative Häufigkeiten eignen sich besser für Vergleiche.\n\n\nLiteraturhinweis: Statistisches Bundesamt (Hrsg.): Leitfaden zur Erstellung von Grafiken in Veröffentlichungen des Statistischen Bundesmates, Wiesbaden 2014."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-14",
+    "href": "SoSe2025-Statistik_02.html#section-14",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Absolute Häufigkeiten berechnen\n\n\n\nWie oft kommt jeder Wert in einem Datensatz vor?\n\nBeispiel-Daten: [2, 3, 2, 4, 3, 3, 5, 2, 4]\nPython:\n\nfrom collections import Counter\n\ndaten = [2, 3, 2, 4, 3, 3, 5, 2, 4]\nabsolute_haeufigkeit = Counter(daten)\nprint(absolute_haeufigkeit)\n\nCounter({2: 3, 3: 3, 4: 2, 5: 1})\n\n\nRStudio:\n\ndaten &lt;- c(2, 3, 2, 4, 3, 3, 5, 2, 4)\ntable(daten)\n\ndaten\n2 3 4 5 \n3 3 2 1"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-15",
+    "href": "SoSe2025-Statistik_02.html#section-15",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Relative Häufigkeiten berechnen\n\n\n\nDie absolute Häufigkeit wird durch die Gesamtzahl der Daten geteilt.\n\nPython (ohne Bibliotheken):\n\nrel_haeufigkeit = {k: v / len(daten) for k, v in absolute_haeufigkeit.items()}\nprint(rel_haeufigkeit)\n\n{2: 0.3333333333333333, 3: 0.3333333333333333, 4: 0.2222222222222222, 5: 0.1111111111111111}\n\n\n\nErstellung einer Schlüssel-Wert-Tabelle (“Dictionary Comprehension”)\nfor-Schleife über Schlüssel (k) und Wert (v) im Zähler-Dictionary\nv / len(daten) berechnet die relative Häufigkeit\nk: v / len(daten) speichert das Ergebnis im Dictionary"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-16",
+    "href": "SoSe2025-Statistik_02.html#section-16",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Relative Häufigkeiten berechnen\n\n\nPython (mit Pandas):\n\nimport pandas as pd\n\ndaten = [2, 3, 2, 4, 3, 3, 5, 2, 4]\nrel_haeufigkeit = pd.Series(daten).value_counts(normalize=True)\nprint(rel_haeufigkeit)\n\n2    0.333333\n3    0.333333\n4    0.222222\n5    0.111111\nName: proportion, dtype: float64\n\n\n\npd.Series(daten) erstellt ein Pandas-Series-Objekt aus der Liste daten\nvalue_counts() ist eine Methode der Pandas-Bibliothek, bei der gezählt wird, wie oft jeder Wert in der Series vorkommt\nmit der Angabe “normalize=True” wird die Ausgabe als relative Häufigkeit zurückgegeben und nicht als absolute Häufigkeit"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-17",
+    "href": "SoSe2025-Statistik_02.html#section-17",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Relative Häufigkeiten berechnen\n\n\nRStudio\n\nrel_haeufigkeit &lt;- prop.table(table(daten))\nprint(rel_haeufigkeit)\n\ndaten\n        2         3         4         5 \n0.3333333 0.3333333 0.2222222 0.1111111 \n\n\n\nprop.table() ist eine R-Funktion, die Proportionen, d.h. relative Häufigkeiten, berechnet\ndiese Funktion wandelt die absoluten Häufigkeiten, die durch die table() erzeugt wird, in relative Häufigkeiten um, indem sie die Häufigkeit jedes Wertes durch die Gesamtzahl der Werte teilt."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-19",
+    "href": "SoSe2025-Statistik_02.html#section-19",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Säulendiagramme\n\n\nPython (mit matplotlib):\n\nimport matplotlib.pyplot as plt\n\nplt.bar(absolute_haeufigkeit.keys(), absolute_haeufigkeit.values())\nplt.xlabel('Wert')\nplt.ylabel('Absolute Häufigkeit')\nplt.title('Säulendiagramm')\nplt.show()"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-20",
+    "href": "SoSe2025-Statistik_02.html#section-20",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Säulendiagramme\n\n\nRStudio:\n\nbarplot(table(daten), col=\"lightblue\", \nmain=\"Säulendiagramm\", xlab=\"Wert\", ylab=\"Häufigkeit\")"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-21",
+    "href": "SoSe2025-Statistik_02.html#section-21",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Histogramme\n\n\nPython (mit matplotlib):\n\nplt.hist(daten, bins=2, edgecolor='black')\n## Bins ist das Argument für die Definition der Anzahl von Intervallen in Python\nplt.xlabel('Werte')\nplt.ylabel('Häufigkeit')\nplt.title('Histogramm')\nplt.show()"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-22",
+    "href": "SoSe2025-Statistik_02.html#section-22",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Histogramme\n\n\nRStudio:\n\nhist(daten, breaks=2, col=\"lightgreen\", main=\"Histogramm\",\n## Breaks ist das Argument für die Definition der Anzahl von Intervallen in R \nxlab=\"Wert\", ylab=\"Häufigkeit\")"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-23",
+    "href": "SoSe2025-Statistik_02.html#section-23",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Kreisdiagramme\n\n\nPython (mit matplotlib):\n\nplt.pie(rel_haeufigkeit.values, labels=rel_haeufigkeit.index, autopct='%1.1f%%')\n\n([&lt;matplotlib.patches.Wedge object at 0x10e71a700&gt;, &lt;matplotlib.patches.Wedge object at 0x10e71a4f0&gt;, &lt;matplotlib.patches.Wedge object at 0x10e727340&gt;, &lt;matplotlib.patches.Wedge object at 0x10e706cd0&gt;], [Text(0.5499999722395388, 0.9526279601903919, '2'), Text(-1.0999999999999959, -9.616505800409723e-08, '3'), Text(0.19101348711923324, -1.0832884416158748, '4'), Text(1.0336617954935041, -0.37622239770798543, '5')], [Text(0.29999998485793017, 0.5196152510129409, '33.3%'), Text(-0.5999999999999978, -5.2453668002234845e-08, '33.3%'), Text(0.10418917479230903, -0.5908846045177498, '22.2%'), Text(0.5638155248146386, -0.2052122169316284, '11.1%')])\n\n## autopct zeigt bei jedem Torstenstück den Prozentwert an; %1.1f bedeutet, dass eine Nachkommastelle angegeben werden soll; f = float, %% wird zu Prozentzeichen \nplt.title('Kreisdiagramm')\nplt.show()"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-24",
+    "href": "SoSe2025-Statistik_02.html#section-24",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Kreisdiagramme\n\n\nRStudio:\n\npie(rel_haeufigkeit, main=\"Kreisdiagramm\", \ncol=rainbow(length(rel_haeufigkeit)))"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-26",
+    "href": "SoSe2025-Statistik_02.html#section-26",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Modus berechnen\n\n\nPython (mit statistics):\n\nimport statistics\n\nmodus = statistics.mode(daten)\nmittelwert = statistics.mean(daten)\nprint(f\"Modus: {modus}, Mittelwert: {mittelwert}\")\n\nModus: 2, Mittelwert: 3.111111111111111\n\n\nRStudio:\n\nmodus &lt;- names(sort(table(daten), decreasing=TRUE))[1]\nmittelwert &lt;- mean(daten)\nprint(paste(\"Modus:\", modus))\n\n[1] \"Modus: 2\"\n\nprint(paste(\"Mittelwert:\", mittelwert))\n\n[1] \"Mittelwert: 3.11111111111111\""
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-27",
+    "href": "SoSe2025-Statistik_02.html#section-27",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Interpretation\n\n\n\nModus und Mittelwert sind Maßzahlen der zentralen Tendenz.\nDie zentrale Tendenz gibt an, um welchen Wert die Datenwerte in einer Stichprobe oder Verteilung tendenziell konzentriert sind.\nModus/Modalwert: Ist der am häufigsten vorkommende Wert in einer Datenreihe.\nMittelwert: Gibt den Durchschnitt an.\nInterpretation der Modalwert-Berechnung: Die meisten Werte liegen bei 3, die Verteilung hat eine Tendenz nach links, da viele niedrige Werte vorkommen."
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-29",
+    "href": "SoSe2025-Statistik_02.html#section-29",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Parallelen zwischen Häufigkeitsverteilung und Quantifying Kissinger\n\n\n\n\nZählung von Begriffen und Themen in Kissingers Kommunikation &gt;&gt; Häufigkeitsverteilung\n\n\n\n\nErfassung zeitlicher Trends &gt;&gt; kumulierte Häufigkeit über Zeit hinweg\n\n\n\n\nVisualisierung von Daten (Wer kommuniziert mit wem?; Welche Themen dominieren?)"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-30",
+    "href": "SoSe2025-Statistik_02.html#section-30",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Beispiel im Stil von “Quantifying Kissinger”\n\n\nText (Rede): “Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good.”"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-31",
+    "href": "SoSe2025-Statistik_02.html#section-31",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Beispiel: Text vorbereiten und Wörter zählen (Python)“\n\n\n\nfrom collections import Counter\nimport matplotlib.pyplot as plt\n\n# Beispieltext\ntext = \"\"\"\nFriends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good.\n\"\"\"\n\n# Wörter in Kleinbuchstaben und bereinigt\nwords = text.lower().replace(\".\", \"\").replace(\",\", \"\").split()\nword_freq = Counter(words)\nprint(word_freq)\n\nCounter({'great': 5, 'and': 4, 'a': 4, 'was': 4, 'he': 4, 'as': 3, 'but': 3, 'the': 3, 'of': 3, 'it': 2, 'for': 2, 'we': 2, 'reagan': 2, 'this': 2, 'they': 2, 'from': 2, 'about': 2, 'much': 2, 'what': 2, 'makes': 2, 'friends': 1, 'is': 1, 'special': 1, 'me': 1, 'to': 1, 'speak': 1, 'here': 1, 'today': 1, 'honor': 1, 'again': 1, 'an': 1, 'extraordinary': 1, 'human': 1, 'being': 1, 'hugely': 1, 'successful': 1, 'american': 1, 'president': 1, 'all': 1, 'know': 1, 'ronald': 1, 'truth': 1, 'teller': 1, 'called': 1, '“the': 1, 'communicator”': 1, 'rejected': 1, 'that': 1, 'title': 1, 'saying:': 1, '“i': 1, 'wasn’t': 1, 'communicator': 1, 'i': 1, 'communicated': 1, 'things': 1, 'didn’t': 1, 'spring': 1, 'full': 1, 'bloom': 1, 'my': 1, 'brow': 1, 'came': 1, 'heart': 1, 'nation”': 1, 'too': 1, 'modest': 1, 'first': 1, 'part': 1, 'right': 1, 'second': 1, 'crystallized': 1, 'nation': 1, 'just': 1, 'importantly': 1, 'good': 1})"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-32",
+    "href": "SoSe2025-Statistik_02.html#section-32",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Beispiel: Relative Häufigkeit (Python)\n\n\n\ntotal_words = sum(word_freq.values())\nrel_freq = {word: round(count / total_words * 100, 2) for word, count in word_freq.items()}\nprint(rel_freq)\n\n{'friends': 0.9, 'it': 1.8, 'is': 0.9, 'special': 0.9, 'for': 1.8, 'me': 0.9, 'to': 0.9, 'speak': 0.9, 'here': 0.9, 'today': 0.9, 'as': 2.7, 'we': 1.8, 'honor': 0.9, 'again': 0.9, 'an': 0.9, 'extraordinary': 0.9, 'human': 0.9, 'being': 0.9, 'and': 3.6, 'a': 3.6, 'hugely': 0.9, 'successful': 0.9, 'american': 0.9, 'president': 0.9, 'all': 0.9, 'know': 0.9, 'ronald': 0.9, 'reagan': 1.8, 'was': 3.6, 'truth': 0.9, 'teller': 0.9, 'this': 1.8, 'he': 3.6, 'called': 0.9, '“the': 0.9, 'great': 4.5, 'communicator”': 0.9, 'but': 2.7, 'rejected': 0.9, 'that': 0.9, 'title': 0.9, 'saying:': 0.9, '“i': 0.9, 'wasn’t': 0.9, 'communicator': 0.9, 'i': 0.9, 'communicated': 0.9, 'things': 0.9, 'they': 1.8, 'didn’t': 0.9, 'spring': 0.9, 'full': 0.9, 'bloom': 0.9, 'from': 1.8, 'my': 0.9, 'brow': 0.9, 'came': 0.9, 'the': 2.7, 'heart': 0.9, 'of': 2.7, 'nation”': 0.9, 'too': 0.9, 'modest': 0.9, 'about': 1.8, 'first': 0.9, 'part': 0.9, 'right': 0.9, 'second': 0.9, 'crystallized': 0.9, 'much': 1.8, 'what': 1.8, 'makes': 1.8, 'nation': 0.9, 'just': 0.9, 'importantly': 0.9, 'good': 0.9}"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-33",
+    "href": "SoSe2025-Statistik_02.html#section-33",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Beispiel: Text vorbereiten und Wörter zählen (RStudio)“\n\n\nText\n\ntext &lt;- \"Friends, it is special for me to speak here today as we honor again an extraordinary human being, and a hugely successful American President. As we all know, Ronald Reagan was a truth teller, and for this he was called “the great communicator.” But he rejected that title, saying: “I wasn’t a great communicator, but I communicated great things. And they didn’t spring full bloom from my brow, they came from the heart of a great nation.” He was too modest about the first part, but he was right about the second. Reagan crystallized much of what makes this nation great, and, just as importantly, much of what makes it good.\"\n# Text zu Kleinbuchstaben & entfernen von Satzzeichen\ntext_clean &lt;- tolower(gsub(\"[[:punct:]]\", \"\", text))\n# In Wörter zerlegen\nwords &lt;- unlist(strsplit(text_clean, \"\\\\s+\"))\n# Häufigkeit zählen\nword_freq &lt;- table(words)\nprint(word_freq)\n\nwords\n            a         about         again           all      american \n            4             2             1             1             1 \n           an           and            as         being         bloom \n            1             4             3             1             1 \n         brow           but        called          came  communicated \n            1             3             1             1             1 \n communicator  crystallized         didnt extraordinary         first \n            2             1             1             1             1 \n          for       friends          from          full          good \n            2             1             2             1             1 \n        great            he         heart          here         honor \n            5             4             1             1             1 \n       hugely         human             i   importantly            is \n            1             1             2             1             1 \n           it          just          know         makes            me \n            2             1             1             2             1 \n       modest          much            my        nation            of \n            1             2             1             2             3 \n         part     president        reagan      rejected         right \n            1             1             2             1             1 \n       ronald        saying        second         speak       special \n            1             1             1             1             1 \n       spring    successful        teller          that           the \n            1             1             1             1             4 \n         they        things          this         title            to \n            2             1             2             1             1 \n        today           too         truth           was         wasnt \n            1             1             1             4             1 \n           we          what \n            2             2"
+  },
+  {
+    "objectID": "SoSe2025-Statistik_02.html#section-34",
+    "href": "SoSe2025-Statistik_02.html#section-34",
+    "title": "Übung Modul 6",
+    "section": "",
+    "text": "Beispiel: Relative Häufigkeit (RStudio)\n\n\n\nrel_freq &lt;- prop.table(word_freq)\nround(rel_freq * 100, 2)  # in Prozent\n\nwords\n            a         about         again           all      american \n          3.6           1.8           0.9           0.9           0.9 \n           an           and            as         being         bloom \n          0.9           3.6           2.7           0.9           0.9 \n         brow           but        called          came  communicated \n          0.9           2.7           0.9           0.9           0.9 \n communicator  crystallized         didnt extraordinary         first \n          1.8           0.9           0.9           0.9           0.9 \n          for       friends          from          full          good \n          1.8           0.9           1.8           0.9           0.9 \n        great            he         heart          here         honor \n          4.5           3.6           0.9           0.9           0.9 \n       hugely         human             i   importantly            is \n          0.9           0.9           1.8           0.9           0.9 \n           it          just          know         makes            me \n          1.8           0.9           0.9           1.8           0.9 \n       modest          much            my        nation            of \n          0.9           1.8           0.9           1.8           2.7 \n         part     president        reagan      rejected         right \n          0.9           0.9           1.8           0.9           0.9 \n       ronald        saying        second         speak       special \n          0.9           0.9           0.9           0.9           0.9 \n       spring    successful        teller          that           the \n          0.9           0.9           0.9           0.9           3.6 \n         they        things          this         title            to \n          1.8           0.9           1.8           0.9           0.9 \n        today           too         truth           was         wasnt \n          0.9           0.9           0.9           3.6           0.9 \n           we          what \n          1.8           1.8"
+  }
+]
